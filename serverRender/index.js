@@ -9,6 +9,9 @@ var DOM = require('react-dom-factories')
 var app = express()
 var App = require('./App')
 
+app.set('views', __dirname + '/views')
+app.set('view engine', 'jsx')
+
 app.get('/', function (req, res) {
   var html = ReactDomServer.renderToString(
     DOM.body(null,
