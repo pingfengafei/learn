@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div class="node1"><div class="hello"></div></div>
+<div class="node2"></div>
+
+<script>
+  var a = document.getElementsByClassName('node1')[0];
+  var newNode = document.createElement('div');
+  newNode.setAttribute('class', 'child');
+  a.appendChild(newNode) //被下面操作覆盖：一点节点不能同时插在2个地方
+  a.parentNode.appendChild(newNode) //在父元素的最后添加节点（在script之后）
+
+  var script = document.getElementsByTagName('script')[0];
+  var body = document.getElementsByTagName('body')[0]
+ // script.parentNode.removeChild(script)
+  body.removeChild(script)
+</script>
+
+</body>
+</html>

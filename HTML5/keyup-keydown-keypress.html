@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<input type="text" onclick="handleClick(this)" onkeypress="handleKeyPress(this)" onkeydown="handleKeyDown(this)" onkeyup="handleKeyup(this)">
+
+<script>
+  function handleClick(e){
+    //console.log('click')
+  }
+
+  function handleKeyDown(e){
+    console.log('handleKeyDown', e.value)
+  }
+
+  function  handleKeyup(e){
+    console.log('handleKeyup', e.value)
+  }
+
+  function handleKeyPress(e){
+    console.log('handleKeyPress', e.value)
+  }
+
+</script>
+</body>
+</html>

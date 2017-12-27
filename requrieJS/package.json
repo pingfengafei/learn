@@ -1,0 +1,15 @@
+{
+  "name": "learn_requirejs",
+  "version": "1.0.0",
+  "description": "demo require.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "demo",
+    "require.js"
+  ],
+  "author": "pingfengafei",
+  "license": "ISC"
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>【notification】</title>
+</head>
+<body>
+<h2>测试修改title && notification</h2>
+<button onclick='generateNotification()'>点击生成notification</button>
+
+<script>
+  window.setInterval(()=>{
+    if(document.title === '【您有新消息】'){
+      document.title = "【　　　　　】";
+    }else{
+      document.title = '【您有新消息】';
+    }
+  },1000);
+
+  let option = {
+    title: '_wech****3002',
+    icon : 'http://images4.c-ctrip.com/target/t1/headphoto/903/173/918/eb4b7bea9720440dac09eab89328ab00_C_180_180.jpg',
+    body : '나는 중국이다',
+    tag : 'uid123456',
+    requireInteraction : true
+  };
+
+
+
+  function generateNotification(){
+  if(window.Notification){
+    console.log(Notification.permission);
+
+    if(window.Notification.permission === 'granted'){
+      createNotification(option);
+    }else if(window.Notification.permission === 'default' || window.Notification.permission === 'denied'){
+      window.Notification.requestPermission((permission)=>{
+        if(permission === 'granted'){
+          createNotification(option);
+        }else{
+          return;
+        }
+      });
+    }
+  }
+}
+
+//notification 最多只能同时显示3个
+function createNotification(option){
+  var notification = new Notification(option.title, option);
+}
+
+</script>
+</body>
+</html>
