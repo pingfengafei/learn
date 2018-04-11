@@ -1,15 +1,15 @@
 {
-  "name": "learn-npm",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "my-npm my-task-name"
-  },
-  "dependencies": {
-    "my-npm": "file:./my-npm"
-  },
-  "author": "",
-  "license": "ISC"
+"name": "learn-npm",
+"version": "1.0.0",
+"description": "",
+"main": "index.js",
+"scripts": {
+"test": "echo \"Error: no test specified\" && exit 1",
+"start": "my-npm my-task-name"
+},
+"dependencies": {
+"my-npm": "file:./my-npm"
+},
+"author": "",
+"license": "ISC"
 }
