@@ -30,15 +30,14 @@
 
   window.onload = () => {
     const proxyBtn = document.createElement('button')
-	  proxyBtn.appendChild(document.createTextNode('点我生成代理页面'))
-    proxyBtn.setAttribute("style", "position:fixed; top: 10px;left : 1000px; background : yellow");
+    proxyBtn.appendChild(document.createTextNode('点我生成代理页面'))
+    proxyBtn.setAttribute('style', 'position:fixed; top: 10px;left : 1000px; background : yellow')
 
     document.body.appendChild(proxyBtn)
 
-	  proxyBtn.addEventListener('click', (e)=>{
-	    console.log('click')
-		  window.open('https://pingfengafei.github.io/learn-page/storage/proxy.html', '_blank', 'height=800,width=1280')
-	  })
+    proxyBtn.addEventListener('click', (e) => {
+      window.open('https://pingfengafei.github.io/learn-page/storage/proxy.html')
+    })
   }
 
   function jumpUrlCallProxy (url, useProxy) {
@@ -48,7 +47,7 @@
       let handler = (e) => {
         if (!window.localStorage.getItem('__storageProxy__')) {
           clearTimeout(timer)
-         removeEventListener('storage', handler, false)
+          removeEventListener('storage', handler, false)
         }
       }
 
