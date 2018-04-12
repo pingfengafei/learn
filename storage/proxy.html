@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>度假proxy页面</title>
+</head>
+<body>
+  这是度假客服IM代理页面
+
+  如果你是度假IM的客服，请将此页面拖到第二屏幕上，如果没有双屏请忽略，并关闭proxy页面
+
+  以后，聊天页跳转的链接，都会在此页面生成
+
+  关闭此页，会在聊天页所在的chrome打开新页面
+
+</body>
+
+<script>
+	window.onload = ()=>{
+    function proxy () {
+      window.addEventListener('storage', storageHandler, false) //localStorage or sessionStorage
+
+      function storageHandler (e) {
+        console.log(e.key)
+        if (e.key === '__storageProxy__') {
+          let url = window.localStorage.getItem('__storageProxy__')
+          url && window.open(url)
+          window.localStorage.setItem('__storageProxy__', '') //fired storage event again
+        }
+      }
+    }
+
+    proxy()
+	}
+
+</script>
+</html>
