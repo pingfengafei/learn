@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>度假proxy页面</title>
+</head>
+<body>
+这是度假客服IM代理页面 <br/>
+
+如果你是度假IM的客服，请将此标签页面从当前chrome中拖出，并移动到第二屏幕上 <br/>
+
+以后，聊天页跳转的链接，都会在此页面生成 <br/>
+
+关闭此页，会在聊天页所在的chrome打开新页面 <br/>
+
+<h3>attention，注意，初次打开可能需要点击chrome网页上方地址栏右边的小弹层，点击允许。</h3>
+
+</body>
+
+<script>
+  window.onload = ()=>{
+    function proxy () {
+      window.addEventListener('message', messageHandler, false)
+      function messageHandler(event){
+        if(true || event.orign === 'https://pingfengafei.github.io'){
+          window.open(event.data, '_blank')
+        }
+      }
+    }
+    proxy()
+  }
+
+</script>
+</html>

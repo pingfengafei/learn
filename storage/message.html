@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+<div>chrome tab communication with postMesage </div>
+<br />
+
+<button>1111</button>
+<button>2222</button>
+<button>3333</button>
+<button>4444</button>
+<button>5555</button>
+</body>
+
+
+<script>
+	let  targetWindow = null
+  const  mockJumpUrl = [
+    'http://vacations.ctrip.com/marketing/51fj.html',
+    'http://vacations.ctrip.com/morelinetravel/p3566821s2.html',
+    'http://vacations.ctrip.com/morelinetravel/p3168213s2.html',
+    'http://taocan.ctrip.com/freetravel/p1018120472s2.html',
+    'http://pages.ctrip.com/dstweb/201803/Melbourne/index.html'
+  ]
+  var btns = document.getElementsByTagName('button')
+  Array.prototype.forEach.call(btns, (node, index) => {
+    node.addEventListener('click', (e) => {
+      /**
+       * 处理关闭代理页面情况，观察代码得知：
+       * 代理页面存在，targetWindow.location.href指向targetWindow地址
+       * 如果存在在，targetWindow.location.href为undefined
+       * 可以用这个，作为判断target是否存在的条件
+       *
+       */
+      if(targetWindow.location.href){
+        targetWindow.postMessage(mockJumpUrl[index], 'https://pingfengafei.github.io')
+      }else{
+        window.open(mockJumpUrl[index], '_blank')
+      }
+    }, false)
+  })
+
+  window.onload = () => {
+    var proxyBtn = document.createElement('button')
+    proxyBtn.appendChild(document.createTextNode('点我生成代理页面'))
+    proxyBtn.setAttribute('style', 'position:fixed; top: 10px;left : 1000px; background : yellow')
+
+    document.body.appendChild(proxyBtn)
+
+    proxyBtn.addEventListener('click', (e) => {
+      targetWindow =  window.open('https://pingfengafei.github.io/learn-page/storage/message-proxy.html')
+      targetWindow.postMessage('message init && fist fired callback', 'https://pingfengafei.github.io')
+    }, false)
+  }
+</script>
+
+</html>
