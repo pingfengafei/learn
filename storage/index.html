@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<button>1111</button>
+<button>2222</button>
+<button>3333</button>
+<button>4444</button>
+<button>5555</button>
+
+<script>
+let jumpUrl = []
+   const btns = document.getElementsByTagName('button')
+   Array.prototype.forEach.call(btns, (node, index)=>{
+       node.addEventListener('click', (e)=>{
+           console.log('hello world!', index)
+       }, false)
+   })
+
+window.onload = ()=>{
+
+}
+
+</script>
+
+</html>
