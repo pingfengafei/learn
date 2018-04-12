@@ -18,15 +18,21 @@
 </body>
 
 <script>
-	window.onload = ()=>{
+  window.onload = ()=>{
     function proxy () {
-			window.addEventListener('message', messageHandler, false)
-	    function messageHandler(event){
-				console.log(message)
-	    }
-    }
-    proxy()
-	}
+      window.addEventListener('storage', storageHandler, false) //localStorage or sessionStorage
 
+      function storageHandler (e) {
+        console.log(e.key)
+        if (e.key === '__storageProxy__') {
+          var url = window.localStorage.getItem('__storageProxy__')
+          url && window.open(url)
+          window.localStorage.setItem('__storageProxy__', '') //fired storage event again
+        }
+      }
+    }
+
+    proxy()
+  }
 </script>
 </html>
