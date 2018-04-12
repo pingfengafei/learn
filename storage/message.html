@@ -6,8 +6,8 @@
 </head>
 <body>
 
-<div>chrome tab communication with postMesage </div>
-<br />
+<div>chrome tab communication with postMessage</div>
+<br/>
 
 <button>1111</button>
 <button>2222</button>
@@ -18,8 +18,8 @@
 
 
 <script>
-	let  targetWindow = null
-  const  mockJumpUrl = [
+  var targetWindow = null
+  var mockJumpUrl = [
     'http://vacations.ctrip.com/marketing/51fj.html',
     'http://vacations.ctrip.com/morelinetravel/p3566821s2.html',
     'http://vacations.ctrip.com/morelinetravel/p3168213s2.html',
@@ -36,9 +36,9 @@
        * 可以用这个，作为判断target是否存在的条件
        *
        */
-      if(targetWindow.location.href){
+      if (targetWindow.location.href) {
         targetWindow.postMessage(mockJumpUrl[index], 'https://pingfengafei.github.io')
-      }else{
+      } else {
         window.open(mockJumpUrl[index], '_blank')
       }
     }, false)
@@ -52,7 +52,7 @@
     document.body.appendChild(proxyBtn)
 
     proxyBtn.addEventListener('click', (e) => {
-      targetWindow =  window.open('https://pingfengafei.github.io/learn-page/storage/message-proxy.html')
+      targetWindow = window.open('https://pingfengafei.github.io/learn-page/storage/message-proxy.html')
       targetWindow.postMessage('message init && fist fired callback', 'https://pingfengafei.github.io')
     }, false)
   }
