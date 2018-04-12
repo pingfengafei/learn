@@ -5,9 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "my-npm my-task-name"
+    "start": "cross-env NODE_ENV=development my-npm my-task-name",
+    "start:my-npm": "my-npm --inspect start",
+    "start:my-npm:query": "my-npm start&"
   },
   "dependencies": {
+    "cross-env": "^5.1.4",
     "my-npm": "file:./my-npm"
   },
   "author": "",

@@ -12,7 +12,7 @@
     "cross-spawn": "^6.0.5",
     "querystring": "^0.2.0"
   },
-  "scripts":{
-    "start" : "node --inspect ./bin/scripts --inspect ---inspect"
+  "scripts": {
+    "start": "node --inspect ./bin/scripts --inspect -t -r"
   }
 }
