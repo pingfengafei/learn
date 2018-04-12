@@ -14,14 +14,14 @@
 <button>5555</button>
 
 <script>
-  let mockJumpUrl = [
+  var mockJumpUrl = [
     'http://vacations.ctrip.com/marketing/51fj.html',
     'http://vacations.ctrip.com/morelinetravel/p3566821s2.html',
     'http://vacations.ctrip.com/morelinetravel/p3168213s2.html',
     'http://taocan.ctrip.com/freetravel/p1018120472s2.html',
     'http://pages.ctrip.com/dstweb/201803/Melbourne/index.html'
   ]
-  const btns = document.getElementsByTagName('button')
+  var btns = document.getElementsByTagName('button')
   Array.prototype.forEach.call(btns, (node, index) => {
     node.addEventListener('click', (e) => {
       jumpUrlCallProxy(mockJumpUrl[index])
@@ -29,7 +29,7 @@
   })
 
   window.onload = () => {
-    const proxyBtn = document.createElement('button')
+    var proxyBtn = document.createElement('button')
     proxyBtn.appendChild(document.createTextNode('点我生成代理页面'))
     proxyBtn.setAttribute('style', 'position:fixed; top: 10px;left : 1000px; background : yellow')
 
@@ -41,10 +41,10 @@
   }
 
   function jumpUrlCallProxy (url, useProxy) {
-    let timer = null
+    var timer = null
     useProxy = true
     if (useProxy) {
-      let handler = (e) => {
+      var handler = (e) => {
         if (!window.localStorage.getItem('__storageProxy__')) {
           clearTimeout(timer)
           removeEventListener('storage', handler, false)
