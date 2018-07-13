@@ -9,7 +9,8 @@
     "babel-preset-react": "^6.24.1",
     "crc32": "^0.2.2",
     "deflate-js": "^0.2.3",
-    "optimist": "^0.6.1"
+    "optimist": "^0.6.1",
+    "rxjs": "^6.2.1"
   },
   "devDependencies": {
     "webpack": "^4.4.1"

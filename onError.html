@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test onErroe</title>
+    <script>
+        window.onerror = function(){
+          console.log(arguments)
+        }
+
+        setInterval(()=>{
+          try{
+            var a
+            a.aaa = 1
+          }catch(e){
+            throw  e
+          }
+        }, 2000)
+    </script>
+</head>
+<body>
+
+</body>
+</html>
