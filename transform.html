@@ -2,9 +2,51 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>transform</title>
 </head>
+<style>
+    .container{
+        width :100%;
+        height :100%
+    }
+
+    img{
+        transform: translate3d(50%, 50%, 0);
+        border: 1px solid red;
+    }
+
+</style>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 <body>
-$END$
+    <!--<div class="container">-->
+        <!--<img src="https://dimg.fws.qa.nt.ctripcorp.com/images/30030u00000009m1jA421.jpg" alt="" />-->
+    <!--</div>-->
+<div>
+    <a class="aaaa" href="http://taocan.ctrip.com/">11111111</a>
+</div>
 </body>
+<script>
+    setInterval(()=>{
+      $('.aaaa').click()
+      console.log(11111)
+    }, 3000)
+
+
+    // let i = 0
+    // function autoRotate(){
+    //   setInterval(()=>{
+    //     rotate( ++i * 10)
+    //   }, 1000)
+    // }
+    //
+    // function rotate(deg){
+    //   $('img').css({
+    //       transform : `rotate(${deg}deg) translate3d(50%, 50%, 0)`,
+    //       // 'transform-origin': 'right bottom'
+    //     }
+    //   )
+    // }
+    //
+    // autoRotate()
+</script>
 </html>

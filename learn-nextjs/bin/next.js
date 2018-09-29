@@ -1,3 +1,2 @@
 #!/usr/bin/env node
-
-console.log(12356565)
+console.log(process.argv)

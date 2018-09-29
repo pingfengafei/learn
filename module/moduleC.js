@@ -1,5 +1,5 @@
 exports.a = 1
-const moduleB = require('./moduleB')
+const moduleD = require('./moduleD')
 exports.b = 2
 exports.c = 3
-console.log(moduleB)
+console.log(moduleD)
