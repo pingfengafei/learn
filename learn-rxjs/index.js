@@ -1,6 +1,13 @@
 const {Observable, Subject, ReplaySubject, from, of, range} = require('rxjs')
 const {map, filter, switchMap} = require('rxjs/operators')
 
-range(1, 200)
-  .pipe(filter(x => x % 2 === 1), map(x => x + x))
-  .subscribe(x => console.log(x))
+// range(1, 200)
+//   .pipe(filter(x => x % 2 === 1), map(x => x + x))
+//   .subscribe(x => console.log(x))
+// Observable.of(1,2,3)
+
+const rxjs = require('rxjs')
+
+// console.log(rxjs)
+console.log(rxjs.of(1,2,3))
+
