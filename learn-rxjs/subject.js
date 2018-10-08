@@ -19,13 +19,24 @@ const {Subject, from} = require('rxjs')
 }
 **/
 
+// {
+//   //Subject也是一个Observer
+//   const subject = new Subject()
+//
+//   subject.subscribe(i=> console.log(i))
+//
+//   const observable = from([1,2,3])
+//
+//   observable.subscribe(subject)
+// }
+
 {
-  //Subject也是一个Observer
-  const subject = new Subject()
 
-  subject.subscribe(i=> console.log(i))
+  const { Observable, Subject, ReplaySubject, from, of, range } = require('rxjs');
+  const { map, filter, switchMap } = require('rxjs/operators');
 
-  const observable = from([1,2,3])
+  range(1, 200)
+  .pipe(filter(x => x % 2 === 1), map(x => x + x))
+  .subscribe(x => console.log(x));
 
-  observable.subscribe(subject)
 }
