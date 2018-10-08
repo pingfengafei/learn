@@ -1,10 +1,66 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>测试addEventLisenter</title>
+    <meta charset="UTF-8"/>
 </head>
+
 <body>
-$END$
+<div class='parent'>
+    <div class='children'>
+        11111
+    </div>
+</div>
+
+<div class='result'>resullllt</div>
 </body>
+
+<script>
+  let parentNode = document.getElementsByClassName('parent')[0]
+  let childrenNode = document.querySelector('.children')
+  let resultNode = document.querySelector('.result')
+
+  parentNode.addEventListener(
+    'click',
+    e => {
+      console.log('dom2 parent')
+    },
+    false
+  )
+
+  parentNode.addEventListener(
+    'click',
+    e => {
+      console.log('dom2 parent 2')
+    },
+    false
+  )
+
+  childrenNode.addEventListener(
+    'click',
+    e => {
+      console.log('dom 2 children')
+    },
+    false
+  )
+
+  /**
+   * dom 0 事件， dom2事件， dom3事件，没有dom1事件，dom1规范没有定义事件部分
+   * addEventLiisener第三个参数可以是options对象，也可以是useCapture布尔值
+   * 为什么大家都喜欢userCapture false 走冒泡呢，因为这种行为和dom 0 一致，dom0 没有捕获阶段
+   *
+   * 从测试中总结几点：
+   * dom0 和 dom2 useCapture false 遵循 节点->冒泡的顺序
+   * dom0 只能绑定一个事件，绑定多个事件，后者覆盖前者。dom2可以绑定多个事件，按照顺序依次执行。
+   * dom对象同时绑定dom0和dom2事件，执行顺讯是dom2->dom0
+   *
+   */
+
+  //测试 dom0 事件
+  parentNode.onclick = (e) => { console.log('dom0 parent') }
+  childrenNode.onclick = (e) =>{console.log('dom0 children')}
+
+
+</script>
+
 </html>
