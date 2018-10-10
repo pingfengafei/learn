@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test basic konwledge</title>
+</head>
+
+<style>
+    .scroll-container{
+        width: 500px;
+        height: 800px;
+        margin: 100px;
+        border: 2px solid black;
+        overflow-y: scroll;
+    }
+
+    .first{
+        margin-top: 100px;
+    }
+</style>
+
+
+<body>
+    <div class="scroll-container">
+    </div>
+</body>
+
+<script>
+    let containerElem = document.querySelector('.scroll-container')
+    let htmlList = Array.from({length:1000}).map((item, index)=> {
+      let className = 'item'
+      if(index === 0){
+        className = 'item first'
+      }
+
+      return  `<div class="${className}" data-index=${index}>${index}</div>`
+    })
+
+    let html = htmlList.join('')
+    containerElem.innerHTML = html
+
+    /**
+     * http://imweb.io/topic/57c5409e808fd2fb204eef52
+     *
+     * 总结：
+     * 1. element没有height属性
+     * 2. offsetHeight: element高度+border,包括padding 和水平滚动条
+     * 3. clientHeight ： 顾名思义，不包括border和水平滚动条
+     * 4. scrollHeight : 在有滚动条的前提下scrollHeight 才有意义，只内容的高度，内容margin也算在内
+     * 5. offsetTop
+     * 6. scrollTop， 可见，唯独支持写操作的只有scrollTop， only this one！
+     * scrollTop 是作用在父元素上的。
+     */
+
+    let offsetHeight = containerElem.offsetHeight //只读
+    let clientHeight = containerElem.clientHeight //只读
+    let scrollHeight = containerElem.scrollHeight //只读
+    let offsetTop = containerElem.offsetTop //元素距离最近父元素的距离
+
+
+    let elem100 = document.querySelector('.item[data-index="100"]')
+
+    let offsetTop100 = elem100.offsetTop
+    console.log(offsetTop100)
+
+
+
+</script>
+</html>
