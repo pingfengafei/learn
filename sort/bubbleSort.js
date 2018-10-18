@@ -1,5 +1,8 @@
 let {swap} = require('./utils')
 
+/**
+ * 对于升序冒泡，每次for循环将最大的元素放到最后
+ */
 
 function bubbleSort(list){
   let i
