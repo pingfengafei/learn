@@ -2,9 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+    <div class="test">123456789</div>
 </body>
+
+<script>
+    let elem = document.querySelector('.test')
+    elem.addEventListener('click', handleClcik, false)
+
+    function handleClcik(e){
+      console.log(window.selection)
+
+    }
+
+</script>
 </html>
