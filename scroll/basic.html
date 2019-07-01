@@ -45,9 +45,10 @@
      * 总结：
      * 1. element没有height属性
      * 2. offsetHeight: element高度+border,包括padding 和水平滚动条
-     * 3. clientHeight ： 顾名思义，不包括border和水平滚动条
-     * 4. scrollHeight : 在有滚动条的前提下scrollHeight 才有意义，只内容的高度，内容margin也算在内
-     * 5. offsetTop
+     * 3. clientHeight ： 顾名思义，不包括border和水平滚动条, 眼镜看到的视窗的高度
+     * 4. scrollHeight : 在有滚动条的前提下scrollHeight 才有意义，真实内容的高度，内容margin也算在内，当没有产生滚动时，clientHeight === scrollHeight
+     *
+     * 5. offsetTop // 子元素距离父元素的高度
      * 6. scrollTop， 可见，唯独支持写操作的只有scrollTop， only this one！
      * scrollTop 是作用在父元素上的。
      */
@@ -58,7 +59,7 @@
     let offsetTop = containerElem.offsetTop //元素距离最近父元素的距离
 
 
-    let elem100 = document.querySelector('.item[data-index="100"]')
+    let elem100 = document.querySelector('.item[data-index="0"]')
 
     let offsetTop100 = elem100.offsetTop
     console.log(offsetTop100)
