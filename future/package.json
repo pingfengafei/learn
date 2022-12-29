@@ -12,7 +12,7 @@
   "dependencies": {
     "express": "^4.16.3",
     "gulp": "^3.9.1",
-    "webpack": "^4.6.0",
+    "webpack": "^5.75.0",
     "webpack-dev-middleware": "^3.1.3"
   }
 }
